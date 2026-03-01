@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🎓 EVG Course Recommender
+# EVG Course Recommender
 
 ### *Que curso você gostaria de fazer na EVG?*
 
 A **dual-model NLP recommender system** that suggests free online courses from Brazil's
-[Escola Virtual do Governo](https://www.escolavirtual.gov.br/) based on a natural-language
+[Escola Virtual de Governo](https://www.escolavirtual.gov.br/) based on a natural-language
 description of the user's training needs.
 
 Built with **Sentence-BERT**, **TF-IDF**, **Cosine Similarity**, and **Dash**.
@@ -303,12 +303,6 @@ docker compose down
 ```
 
 The container exposes port **8050** and mounts `data/` and `embeddings/` as volumes for persistence.
-
----
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
