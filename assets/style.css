@@ -1,0 +1,371 @@
+/* ── EVG Course Recommender — Minimalist Dark Theme ─────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #0f1117;
+    --bg-card: #1a1d27;
+    --bg-input: #22252f;
+    --border: #2d303a;
+    --accent: #646cff;
+    --accent-soft: rgba(100, 108, 255, 0.12);
+    --text-primary: #e8e8ec;
+    --text-muted: #9195a0;
+    --success: #34d399;
+    --orange: #fb923c;
+    --radius: 12px;
+    --transition: 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ──────────────────────────────────────────────────────────── */
+.app-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────── */
+.header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* ── Input Section ───────────────────────────────────────────────────── */
+.input-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 36px;
+}
+
+.input-section label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 100px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 14px 16px;
+    resize: vertical;
+    outline: none;
+    transition: border var(--transition);
+}
+
+.input-section textarea:focus {
+    border-color: var(--accent);
+}
+
+.input-section textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ── Slider ──────────────────────────────────────────────────────────── */
+
+/* ── Slider ──────────────────────────────────────────────────────────── */
+
+.slider-section {
+    margin-top: 24px;
+}
+
+/* Linha de fundo */
+.rc-slider-rail {
+    background: var(--border) !important;
+}
+
+/* Linha preenchida */
+.rc-slider-track,
+.dash-slider-track {
+    background: #ffffff !important;
+}
+
+/* Bolinha (handle) */
+.rc-slider-handle,
+.dash-slider-thumb {
+    border: 2px solid #ffffff !important;
+    background: var(--bg-card) !important;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Pontos de marcação (ticks) */
+.rc-slider-dot,
+.dash-slider-dot {
+    border-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.rc-slider-dot-active,
+.dash-slider-dot-active {
+    border-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+/* Números abaixo do slider */
+.rc-slider-mark-text,
+.dash-slider-mark {
+    color: #ffffff !important;
+    font-size: 0.75rem !important;
+}
+
+/* Número ativo (quando selecionado) */
+.rc-slider-mark-text-active,
+.dash-slider-mark-active {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Tooltip e número da caixa: Fundo branco, texto roxo */
+.rc-slider-tooltip-inner,
+.dash-tooltip,
+.dash-input-container.dash-range-slider-input.dash-range-slider-max-input {
+    background: #ffffff !important;
+    color: var(--accent) !important;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* ── Button ──────────────────────────────────────────────────────────── */
+.search-btn {
+    display: block;
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px 0;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.search-btn:hover {
+    background: #535bf2;
+    transform: translateY(-1px);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Results Grid ────────────────────────────────────────────────────── */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.result-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color var(--transition);
+}
+
+.result-panel:hover {
+    border-color: var(--accent);
+}
+
+.panel-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.panel-title .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.badge-sbert {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.badge-tfidf {
+    background: rgba(251, 146, 60, 0.12);
+    color: var(--orange);
+}
+
+/* ── Course Cards ────────────────────────────────────────────────────── */
+.course-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 12px;
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.course-card:last-child {
+    margin-bottom: 0;
+}
+
+.course-card:hover {
+    transform: translateX(4px);
+    border-color: var(--accent);
+}
+
+.course-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.course-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+}
+
+.course-meta .sim-score {
+    font-weight: 600;
+    color: var(--success);
+}
+
+.course-meta .hours {
+    color: var(--text-muted);
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────── */
+.empty-state {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+.footer {
+    text-align: center;
+    margin-top: 56px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity var(--transition);
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+/* ── Loading spinner ─────────────────────────────────────────────────── */
+._dash-loading {
+    display: none !important;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.disclaimer-box {
+    background-color: rgba(234, 185, 34, 0.15);
+    /* Fundo amarelo suave */
+    color: #eab922;
+    /* Texto amarelo para contraste */
+    border: 1px solid rgba(234, 185, 34, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.disclaimer-box a {
+    color: #ffd166;
+    /* Cor do link dentro da caixa */
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.disclaimer-box a:hover {
+    color: #fff;
+}

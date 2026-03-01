@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: evg-recommender
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+    restart: unless-stopped
